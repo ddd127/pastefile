@@ -23,6 +23,6 @@ public class Indexes {
     // INDEX definitions
     // -------------------------------------------------------------------------
 
-    public static final Index FILES_ID_UINDEX = Internal.createIndex(DSL.name("files_id_uindex"), Files.FILES, new OrderField[] { Files.FILES.ID }, true);
+    public static final Index FILES_ID_U_INDEX = Internal.createIndex(DSL.name("files_id_u_index"), Files.FILES, new OrderField[] { Files.FILES.ID }, true);
     public static final Index FLYWAY_SCHEMA_HISTORY_S_IDX = Internal.createIndex(DSL.name("flyway_schema_history_s_idx"), FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, new OrderField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.SUCCESS }, false);
 }
