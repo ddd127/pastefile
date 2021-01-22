@@ -19,7 +19,7 @@ import org.jooq.Identity;
 import org.jooq.Index;
 import org.jooq.Name;
 import org.jooq.Record;
-import org.jooq.Row6;
+import org.jooq.Row4;
 import org.jooq.Schema;
 import org.jooq.Table;
 import org.jooq.TableField;
@@ -60,16 +60,6 @@ public class Files extends TableImpl<FilesRecord> {
      * The column <code>public.files.time</code>.
      */
     public final TableField<FilesRecord, LocalDateTime> TIME = createField(DSL.name("time"), SQLDataType.LOCALDATETIME(6), this, "");
-
-    /**
-     * The column <code>public.files.code</code>.
-     */
-    public final TableField<FilesRecord, String> CODE = createField(DSL.name("code"), SQLDataType.VARCHAR(255), this, "");
-
-    /**
-     * The column <code>public.files.path</code>.
-     */
-    public final TableField<FilesRecord, String> PATH = createField(DSL.name("path"), SQLDataType.VARCHAR(255), this, "");
 
     /**
      * The column <code>public.files.name</code>.
@@ -166,11 +156,11 @@ public class Files extends TableImpl<FilesRecord> {
     }
 
     // -------------------------------------------------------------------------
-    // Row6 type methods
+    // Row4 type methods
     // -------------------------------------------------------------------------
 
     @Override
-    public Row6<Long, LocalDateTime, String, String, String, String> fieldsRow() {
-        return (Row6) super.fieldsRow();
+    public Row4<Long, LocalDateTime, String, String> fieldsRow() {
+        return (Row4) super.fieldsRow();
     }
 }

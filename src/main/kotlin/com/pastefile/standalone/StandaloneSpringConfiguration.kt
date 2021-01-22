@@ -1,5 +1,7 @@
 package com.pastefile.standalone
 
+import com.pastefile.api.ApiSpringConfiguration
+import com.pastefile.application.ApplicationSpringConfiguration
 import com.pastefile.domain.DomainSpringConfiguration
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.Import
@@ -10,6 +12,8 @@ import org.springframework.context.annotation.Import
 
 @Configuration
 @Import(value = [
-    DomainSpringConfiguration::class
+    ApiSpringConfiguration::class,
+    DomainSpringConfiguration::class,
+    ApplicationSpringConfiguration::class
 ])
 class StandaloneSpringConfiguration

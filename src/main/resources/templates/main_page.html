@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PasteFile</title>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:rel="stylesheet" th:href="@{/css/normalize.css}">
+    <script th:src="@{/js/script.js}"></script>
+</head>
+<body onload="body_onload()">
+
+<div class="container">
+    <label for="file_input" id="file_label">Choose file</label>
+    <input type="file" id="file_input">
+    <button type="submit" onclick="submit_button()" id="submit_button">Paste!</button>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>PasteFile</title>
+    <link th:rel="stylesheet" th:href="@{/css/style.css}">
+    <link th:rel="stylesheet" th:href="@{/css/normalize.css}">
+    <script th:src="@{/js/script.js}"></script>
+</head>
+<body>
+
+<div class="container">
+    <p th:text="${p_text}"></p>
+    <a th:href="${link}" th:text="${link_text}"></a>
+</div>
+
+</body>
+</html>
