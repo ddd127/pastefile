@@ -26,7 +26,14 @@ class FileBodyService {
         name: String
     ): FileSystemResource = FileSystemResource(getPath(id, name))
 
-    fun createFile(id: Long, name: String): File {
+    fun removeFile(id: Long, name: String) {
+        var file = File(getPath(id, name))
+        file.delete()
+        file = File(getDirectoryPath(id))
+        file.delete()
+    }
+
+    private fun createFile(id: Long, name: String): File {
         val currentDirectory = getDirectoryPath(id)
         File(currentDirectory).mkdirs()
         val result = File(getPath(id, name))
@@ -34,10 +41,10 @@ class FileBodyService {
         return result
     }
 
-    fun getPath(
+    private fun getPath(
         id: Long,
         name: String
     ): String = getDirectoryPath(id) + name
 
-    fun getDirectoryPath(id: Long) = "$directoryPath$id/"
+    private fun getDirectoryPath(id: Long) = "$directoryPath$id/"
 }

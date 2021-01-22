@@ -19,6 +19,8 @@ class FileService @Autowired constructor(
 ) {
 
     fun createFile(fileCreationRequest: FileCreationRequest): Long {
+        removeOld()
+
         val fileInfo = FileInfo(
             null,
             fileCreationRequest.name,
@@ -45,5 +47,13 @@ class FileService @Autowired constructor(
 
     fun getFileInfo(id: Long): FileInfo? {
         return fileInfoRepository.getById(id)
+    }
+
+    private fun removeOld() {
+        val oldList = fileInfoRepository.getOlder(
+            LocalDateTime.now().minusHours(2)
+        )
+        oldList.forEach { fileBodyService.removeFile(it.id!!, it.name) }
+        fileInfoRepository.removeAll(oldList.map { it.id!! })
     }
 }
